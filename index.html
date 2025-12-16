@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>Puzzle Lab</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#222a36" />
+  <meta name="description" content="Offline-capable procedural jigsaw puzzle from any image." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png" />
+  <script type="module" crossorigin src="/pzl/assets/main-cKvwLCM7.js"></script>
+  <link rel="stylesheet" crossorigin href="/pzl/assets/main-DjU2PBjY.css">
+<style>.top-bar { display: none !important; }</style>
+</head>
+<body>
+  <header class="top-bar">
+    <div id="logo" class="logo" data-i18n="header.logo">🧩 Puzzle Lab</div>
+    <div class="controls">
+      <input id="imageInput" type="file" accept="image/png,image/jpeg" style="display:none;" />
+      <div class="slider-container">
+        <label for="pieceSlider" data-i18n="label.pieces">Pieces:</label>
+        <input id="pieceSlider" type="range" min="0" max="100" value="0" />
+        <span id="pieceDisplay" class="piece-count">0</span>
+      </div>
+      <div class="zoom-controls">
+        <button id="zoomOutButton" class="zoom-btn" data-i18n-title="button.zoomOut" title="Zoom Out">−</button>
+        <span id="zoomDisplay" class="zoom-level">100%</span>
+        <button id="zoomInButton" class="zoom-btn" data-i18n-title="button.zoomIn" title="Zoom In">+</button>
+        <button id="zoomResetButton" class="zoom-reset-btn" data-i18n-title="button.zoomReset" title="Reset Zoom">⌂</button>
+      </div>
+      <button id="orientationTipButton" class="orientation-tip-btn" style="display:none;" data-i18n="button.orientationTip" data-i18n-title="button.orientationTipTooltip" title="Fix piece orientation to 0°">🧭</button>
+      <button id="helpButton" class="help-btn" data-i18n="button.help">?</button>
+      <span id="progressDisplay" class="progress" data-i18n="status.emptyProgress">0 / 0 (0%)</span>
+      <select id="langSelect" class="lang-select" aria-label="Language selector">
+        <option value="en">🇺🇸 EN</option>
+        <option value="de">🇩🇪 DE</option>
+        <option value="ru">🇷🇺 RU</option>
+        <option value="ua">🇺🇦 UA</option>
+      </select>
+    </div>
+  </header>
+  <main class="layout">
+  <section id="piecesContainer" class="pieces-container" data-i18n-aria-label="aria.pieceBox" aria-label="Piece Box">
+      <div id="piecesViewport" class="pieces-viewport">
+        <div class="placeholder">Load an image and generate puzzle pieces.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Help Modal -->
+  <div id="helpModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <div class="modal-header">
+  <h2 data-i18n="help.title">🧩 How to Play Puzzle Lab</h2>
+        <span class="close-btn" id="closeHelp">&times;</span>
+      </div>
+      <div class="modal-body" data-i18n="help.bodyHtml"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+</body>
+</html>
