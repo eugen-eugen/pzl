@@ -2,21 +2,21 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <title>X-Mas Puzzle</title>
+  <title>Puzzle Lab</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#222a36" />
-  <meta name="description" content="X-Mas Puzzle" />
+  <meta name="description" content="Offline-capable procedural jigsaw puzzle from any image." />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png" />
   <link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png" />
-  <script type="module" crossorigin src="/pzl/assets/main-uevGBd1C.js"></script>
+  <script type="module" crossorigin src="/pzl/assets/main-CcoNzjBV.js"></script>
   <link rel="stylesheet" crossorigin href="/pzl/assets/main--D0UAgmb.css">
 <style>.top-bar { display: none !important; }</style>
 </head>
 <body>
   <header class="top-bar">
-    <div id="logo" class="logo" data-i18n="header.logo">🎄 X-Mas Puzzle</div>
+    <div id="logo" class="logo" data-i18n="header.logo">🧩 Puzzle Lab</div>
     <div class="controls">
       <div class="slider-container">
         <label for="pieceSlider" data-i18n="label.pieces">Pieces:</label>
@@ -30,7 +30,14 @@
         <button id="zoomResetButton" class="zoom-reset-btn" data-i18n-title="button.zoomReset" title="Reset Zoom">⌂</button>
       </div>
       <button id="orientationTipButton" class="orientation-tip-btn" style="display:none;" data-i18n="button.orientationTip" data-i18n-title="button.orientationTipTooltip" title="Fix piece orientation to 0°">🧭</button>
+      <button id="helpButton" class="help-btn" data-i18n="button.help">?</button>
       <span id="progressDisplay" class="progress" data-i18n="status.emptyProgress">0 / 0 (0%)</span>
+      <select id="langSelect" class="lang-select" aria-label="Language selector">
+        <option value="en">🇺🇸 EN</option>
+        <option value="de">🇩🇪 DE</option>
+        <option value="ru">🇷🇺 RU</option>
+        <option value="ua">🇺🇦 UA</option>
+      </select>
     </div>
   </header>
   <main class="layout">
@@ -45,7 +52,7 @@
   <div id="helpModal" class="modal" style="display:none;">
     <div class="modal-content">
       <div class="modal-header">
-  <h2 data-i18n="help.title">🎄 How to Play Puzzle Lab</h2>
+  <h2 data-i18n="help.title">🧩 How to Play Puzzle Lab</h2>
         <span class="close-btn" id="closeHelp">&times;</span>
       </div>
       <div class="modal-body" data-i18n="help.bodyHtml"></div>
